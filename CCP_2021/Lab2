@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <math.h>
+double area_of_triangle(double, double, double);
+void main()
+{double a, b, c, area;
+printf("Enter the lengths of sides of a triangle\n");
+scanf("%lf%lf%lf", &a, &b, &c);
+area = area_of_triangle(a, b, c);
+printf("Area of the triangle = %.4lf\n", area);
+}
+double area_of_triangle(double a, double b, double c)
+{  double s, area;
+  s = (a+b+c)/2;
+  area = sqrt(s*(s-a)(s-b)(s-c));
+  return area;
+}
+
+#include <stdio.h>
+#include <math.h>
+void main()
+{  int a, b, c, d;
+  float root1, root2;
+  printf("Enter a, b and c for a quadratic equation where a*x*x + b*x + c = 0\n");
+  scanf("%d%d%d", &a, &b, &c);
+  d = b*b - 4*a*c;
+  if (d < 0)
+  { printf("First root = %f + i%f\n", -b/(2*a), sqrt(-d)/(2*a));
+    printf("Second root = %f - i%f\n", -b/(2*a), sqrt(-d)/(2*a));
+  }
+  else
+  { root1 = (-b + sqrt(d))/(2*a);
+    root2 = (-b - sqrt(d))/(2*a);
+    printf("First root = %f\n", root1);
+    printf("Second root = %f\n", root2);
+  }
+}
+
+#include<stdio.h>
+#include<stdlib.h>
+float average(int,int,int);
+void main()
+{int x,y,z;
+float answer;
+printf("Enter three numbers to find their average:\n");
+scanf("%d%d%d",&x,&y,&z);
+answer=average(x,y,z);
+printf("AVERAGE: %f",answer);
+}
+float average(int a, int b,int c)
+{float av;
+av=(a+b+c)/3.0;
+return av;
+}
+
+#include<stdio.h>
+#include<math.h>
+int smallest(int,int,int);
+void main()
+{
+int a,b,c,answer;
+printf("Enter three numbers to find the smallest among them:\n");
+scanf("%d%d%d",&a,&b,&c);
+answer=smallest(a,b,c);
+if(answer!=0)
+{printf("The smallest of the three numbers is %d \n",answer);}
+else
+    {printf("There is no smallest number");}
+}
+int smallest(int x,int y,int z)
+{int s;
+if(x<y && x<z)
+{return x;}
+if(y<z && y<x)
+{return y;}
+if(z<x && z<y)
+{return z;}
+else
+{return 0;}
+}
